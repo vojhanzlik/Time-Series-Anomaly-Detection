@@ -22,6 +22,12 @@ setup(
         'tslearn',
         'scipy',
         'scikit-learn',
-        'h5py'
+        'h5py',
+        'pandas',
+        'torch',
+        'pytorch-lightning',
+        'scikit-learn',
+        'tslearn',
+        'matplotlib'
     ],
 )

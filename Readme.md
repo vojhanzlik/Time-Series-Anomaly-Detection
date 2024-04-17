@@ -1,6 +1,6 @@
 Distributing the package: 
 
-pip install setuptools, twine
+pip install setuptools, twine, wheel
 
 python setup.py bdist_wheel sdist
 
