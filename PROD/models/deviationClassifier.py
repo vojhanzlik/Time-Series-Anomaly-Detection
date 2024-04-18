@@ -91,6 +91,8 @@ class deviationClassifier():
         return is_anomaly
 
     def predict_partial_signal(self, sample, vis = True, save_fig = None, learn_from_signal = True):
+        sample_len = np.shape(sample)[0]
+        mean_len = np.shape(self.mean_ts)[0]
         if self.magnitude == 0:
             print("WARN: The classifier is not trained, aborting classification!")
             if learn_from_signal and self.learning_treshold < (sample_len/mean_len):
@@ -98,8 +100,6 @@ class deviationClassifier():
                 self.std_ts = np.zeros_like(sample)
                 self.magnitude = 1
             return
-        sample_len = np.shape(sample)[0]
-        mean_len = np.shape(self.mean_ts)[0]
         self.mean_ts, sample = set_signals_to_same_length(self.mean_ts, sample)
         diff = np.abs(sample[:sample_len, :] - self.mean_ts[:sample_len, :])
         anomalies = diff > np.abs(self.sensitivity * self.std_ts[:sample_len, :])
