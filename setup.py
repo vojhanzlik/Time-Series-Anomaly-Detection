@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="anomaly-det-model",
-    version="1.0",
+    version="1.1",
     author="Your Name",
     author_email="your.email@example.com",
     description="Anomaly detection in time series model",
